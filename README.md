@@ -37,9 +37,10 @@ The data model for this dataset is described in the picture below:
 
 
 ### ✏️  Exercises:
-1. Create a normalized data schema 
-2. Create the DDL's and load the data
-3. Create objects or stored procedures 
-3. Answer some questions
+1. [Design the database](#Exercise1) 
+2. Create a normalized data schema 
+3. Create the DDL's and load the data
+4. Create objects or stored procedures 
+5. Answer some questions
 
-### ✏️  Exercise 1: Create the DDL's 
+### Exercise 1: Create the DDL's 

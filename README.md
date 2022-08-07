@@ -27,8 +27,8 @@ This is the core dataset. From each order you might find all other information.
 
 ### 2.  Customers dataset
 This dataset has information about the customer and its location. Use it to identify unique customers in the orders 
-dataset and to find the orders delivery location. At the olist system each order is assigned to a unique customerid. 
-This means that the same customer will get different ids for different orders. The purpose of having a customerunique_id 
+dataset and to find the orders delivery location. At the olist system each order is assigned to a unique **customer_id**. 
+This means that the same customer will get different ids for different orders. The purpose of having a **customer_unique_id** 
 on the dataset is to allow you to identify customers that made repurchases at the store. Otherwise you would find that 
 each order had a different customer associated with.
 
@@ -79,6 +79,9 @@ distances between sellers and customers.
 ### 8. Payments dataset
 This dataset includes data about the orders payment options.
 
+* payment_sequential: a customer may pay an order with more than one payment method. If he does so, a sequence will be created to accommodate all payments.
+
+
 **File**: [olist_order_payments_dataset.csv](olist_dataset/olist_order_payments_dataset.csv)
 
 ### 9. Categories
@@ -97,10 +100,14 @@ The data model for this dataset is described in the picture below:
 2. Create a normalized data schema 
 3. Create the DDL's and load the data
 4. Create objects or stored procedures 
-5. Answer some questions
+5. Business questions
 
 ## Exercise 1: Design the database model 
+Design the Olist e-commerce ER data model (diagram). You can use [dbdiagram.io](https://dbdiagram.io/) tool to do so. 
+Don't forget to include the relations between entities. 
 
+
+## Exercise 2: Normalize the data model 
 
 
 Design a DB from hypothetical scenario 

@@ -177,27 +177,95 @@ The data model for this dataset is described in the picture below:
 ![Olist Dataset Model](documentation_images/olist_dataModel.png)
 
 
-## ✏️  Exercises:
-1. [Design the database model](#Exercise1) 
-2. Create a normalized data schema 
-3. Create the DDL's and load the data
-4. Create objects or stored procedures 
-5. Business questions
+# Exercises: 
+The following exercises have to be handed in, please create a folder called `Solutions` and put all the
+solutions in here, each exercise will tell you how to name the files. 
 
-## Exercise 1: Design the database model 
-Design the Olist e-commerce ER data model (diagram). You can use [dbdiagram.io](https://dbdiagram.io/) tool to do so. 
-Don't forget to include the relations between entities. 
+## ✏️ Exercise 1: Design the database model 
+Design the Olist e-commerce ER data model (diagram) as is, meaning that you don't have to make modifications, you will 
+create the diagram according to the information about the datasets and their columns. You can use [dbdiagram.io](https://dbdiagram.io/) 
+or [quickdatabasediagrams](https://app.quickdatabasediagrams.com/#/) tools to do so. 
+
+Your diagram must include: 
+* Tables, their columns and their data types
+* PK and FK 
+* Relationships (one-to-many, one-to-one, many-to-many)
+
+> NOTE: Export your diagram as an image, name it `sol_exercise1.png` and place it in th `Solutions` folder
+## ✏️ Exercise 2: Normalize the data model 
+If you take a look at the files we can see that we have scattered data across multiple files, there are repetitive 
+columns that ideally should be combined. 
+
+Let's create the normalized data model. You will do a functional dependency analysis for each of the tables and will 
+determine if such tables are in breach of the 3rd normal form (remember that the normal forms cascade), if so you will have to normalize them. 
+
+> NOTE: Export your diagram as an image, name it `sol_exercise2.png` and place it in the `Solutions` folder, additionally
+> add a sol_exercise2.md file to explain the process of normalization for each table 
 
 
-## Exercise 2: Normalize the data model 
+## ✏️ Exercise 3: Create the DDL's and load the data
+Setup a docker container with a MySQL instance, create all the DDL's and load the data into the tables. 
+You will do this according to the **original** schema, not the normalized schema.  
+
+> NOTE: Place all your DDL's in `sol_exercise3.sql` file and place the file in the `Solutions` folder
+
+> NOTE: to be reviewed if can do it from normalized schema. 
+
+## ✏️ Exercise 4:  Create views and stored procedures 
 
 
-Design a DB from hypothetical scenario 
 
-Create DDLs statements  
+#### Create a view 
+TBD 
 
-Create Image and container for the DB 
+> NOTE: Place all the DDL's `sol_exercise4.sql` file and place the file in the `Solutions` folder
 
-Queries from their DB schema 
+## ✏️ Exercise 5: Business questions
+Please answer the following questions regarding the Olist dataset.
 
-Stored Procedures/User Defined Functions excercises 
+> NOTE: Place all the DML's `sol_exercise5.sql` file and place the file in the `Solutions` folder, 
+> include a comment for each query to know which exercise are you referring to. 
+
+Example of sol_exercise5.sql file:
+```
+-- Question 1 
+SELECT * FROM table; 
+
+-- Question 2
+SELECT * FROM table; 
+```
+
+#### Question 1:
+Which are the top 10 cities with highest revenue from 2016 to 2018?  
+
+In your result include the total number of orders placed 
+and the total payment. 
+
+#### Question 2:
+How many products does each category has? 
+
+Category names have to be in English. 
+
+#### Question 3:
+How many customers do we have in each city? 
+
+Include the percentage of customers per city. 
+
+#### Question 4:
+What is the:
+
+* maximum price of existing products?
+* minimum price of existing products?
+* average price of existing products?
+
+Use a single query to get the 3 results.
+
+#### Question 5:
+What is the number and percentage of orders purchased in January 2017 with a 5 review score? 
+
+
+#### Question 6: 
+Identify all deliveries that were late by 10 or more days. 
+
+
+#### Question 7: 

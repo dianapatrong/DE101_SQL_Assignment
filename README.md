@@ -192,24 +192,26 @@ Your diagram must include:
 * Relationships (one-to-many, one-to-one, many-to-many)
 
 > NOTE: Export your diagram as an image, name it `sol_exercise1.png` and place it in th `Solutions` folder
-## ✏️ Exercise 2: Normalize the data model 
+
+
+## ✏️ Exercise 2: Create the DDL's and load the data
+Setup a docker container with a MySQL instance, create all the DDL's and load the data into the tables. 
+You will do this according to the **original** schema, not the normalized schema.  
+
+> NOTE: Place all your DDL's in `sol_exercise2.sql` file and place the file in the `Solutions` folder
+> NOTE: Indexing may be needed for better performance 
+
+
+## ✏️ Exercise 3: Normalize the data model 
 If you take a look at the files we can see that we have scattered data across multiple files, there are repetitive 
 columns that ideally should be combined. 
 
 Let's create the normalized data model. You will do a functional dependency analysis for each of the tables and will 
 determine if such tables are in breach of the 3rd normal form (remember that the normal forms cascade), if so you will have to normalize them. 
 
-> NOTE: Export your diagram as an image, name it `sol_exercise2.png` and place it in the `Solutions` folder, additionally
+
+> NOTE: Export your diagram as an image, name it `sol_exercise3.png` and place it in the `Solutions` folder, additionally
 > add a sol_exercise2.md file to explain the process of normalization for each table 
-
-
-## ✏️ Exercise 3: Create the DDL's and load the data
-Setup a docker container with a MySQL instance, create all the DDL's and load the data into the tables. 
-You will do this according to the **original** schema, not the normalized schema.  
-
-> NOTE: Place all your DDL's in `sol_exercise3.sql` file and place the file in the `Solutions` folder
-
-> NOTE: to be reviewed if can do it from normalized schema. 
 
 ## ✏️ Exercise 4:  Create views and stored procedures 
 

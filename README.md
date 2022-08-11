@@ -211,7 +211,8 @@ remember to include all statements.
 
 > NOTES: 
 > 1. Place all your DDL's in `sol_exercise2.sql` file and place the file in the `Solutions` folder
-> 2. Indexing may be needed in some tables for better performance
+> 2. Place your `Dockerfile` or `docker-compose.yml` into the `Solutions` folder
+> 3. Indexing may be needed in some tables for better performance
 
 
 ### Indexing Performance Example:

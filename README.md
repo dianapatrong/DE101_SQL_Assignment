@@ -177,10 +177,9 @@ The data model for this dataset is described in the picture below:
 ![Olist Dataset Model](documentation_images/olist_dataModel.png)
 
 
-# Exercises: 
-The following exercises have to be handed in, please create a folder called `Solutions` and put all the
-solutions in here, each exercise will tell you how to name the files. 
-
+# ✏️ Exercises: 
+The following exercises have to be handed in, please create a folder called `Solutions` within each exercise folder and put all the
+solutions in there, each exercise will tell you how to name the files. 
 
 1. [Exercise 1: Design the database model](Exercises/Exercise1/README.md)
 2. [Exercise 2: Create the DDL's and load the data](Exercises/Exercise2/README.md)

@@ -1,15 +1,10 @@
-
-## ✏️ Exercise 4: Create the normalized data model from the existing tables
+## ✏️ Exercise 4: Create the normalized data model from the original schema
 In this exercise you are going to use the tables that you loaded in Exercise 1 to create the normalized model 
-solution given by the teacher.
+solution given by the teacher. 
 
 1. Create the DDL's for the normalized tables
-2. Create a new database called **olist_normalized** 
+2. Create a new database called **olist_normalized**
 3. Create the statements to load the data, follow the business logic below for de-duplication
-
-This time the constraint check is going to be performed as we are going to omit records that do not match
-from our child table to our parent table, so please make sure you have set  `SET FOREIGN_KEY_CHECKS=0;` 
-
 
 ### Business rules: 
 
@@ -18,7 +13,8 @@ location city in descending order.
 
 Example: 
 The selected record in red is the one that will have to be inserted. 
-![Geolocation de-duplication example](documentation_images/geolocation_deduplication.png)
+
+![Geolocation de-duplication example](../../documentation_images/geolocation_deduplication.png)
 
 > HINT: Window functions 
 
@@ -44,9 +40,9 @@ each value should be rounded to 2 decimals.
 
 Example: 
 
-![Products dedup example - original](documentation_images/products_duplicates.png)
+![Products dedup example - original](../../documentation_images/products_duplicates.png)
 
-![Products dedup example - result](documentation_images/products_deduplication.png)
+![Products dedup example - result](../../documentation_images/products_deduplication.png)
 
 > HINT: Window functions 
 
@@ -56,9 +52,9 @@ Example:
 7. An order can have multiple products, either the same product or different ones, for the `order_items` table 
 you have to aggregate by product_id the quantity of products on a particular order
 
-![Order items dedup example - original](documentation_images/order_items_duplicates.png)
+![Order items dedup example - original](../../documentation_images/order_items_duplicates.png)
 
-![Order items dedup example - result](documentation_images/order_items_deduplication.png)
+![Order items dedup example - result](../../documentation_images/order_items_deduplication.png)
 
 
 Do not set the following: 
@@ -68,7 +64,7 @@ SET SQL_SAFE_UPDATES=0;
 
 
 > NOTE: 
-> 1. Place all your DDL's in `sol_exercise4.sql` file and place the file in the `Solutions` folder
+> 1. Place all your DDL's in `sol_exercise4.sql` file and place the file in the `Exercise4/Solutions` folder
 > 
 
 ⚠️ The teacher should be able to run the file and load the data into the normalized model using your script without problems, so 

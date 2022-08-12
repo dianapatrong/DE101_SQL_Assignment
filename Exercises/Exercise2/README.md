@@ -1,4 +1,3 @@
-
 ## ✏️ Exercise 2: Create the DDL's and load the data
 Setup a docker container with a MySQL instance, create all the DDL's and load the data into the tables. 
 You will do this according to the **original** schema.
@@ -15,8 +14,8 @@ remember to include all statements.
 
 
 > NOTES: 
-> 1. Place all your DDL's in `sol_exercise2.sql` file and place the file in the `Solutions` folder
-> 2. Place your `Dockerfile` or `docker-compose.yml` into the `Solutions` folder
+> 1. Place all your DDL's in `sol_exercise2.sql` file and place the file in the `Exercise2/Solutions` folder
+> 2. Place your `Dockerfile` or `docker-compose.yml` into the `Exercise2/Solutions` folder
 > 3. Indexing may be needed in some tables for better performance
 
 

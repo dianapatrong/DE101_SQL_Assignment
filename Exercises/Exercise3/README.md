@@ -20,5 +20,5 @@ Your explanation should include:
 * Any columns that you may have dropped and the explanation of why 
 
 > NOTE: 
-> 1. Export your diagram as an image, name it `sol_exercise3.png` and place it in the `Solutions` folder
+> 1. Export your diagram as an image, name it `sol_exercise3.png` and place it in the `Exercise3/Solutions` folder
 > 2. Add a `sol_exercise3.md` file to explain the normalization process you followed  

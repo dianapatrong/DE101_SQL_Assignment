@@ -8,5 +8,5 @@ Your diagram must include:
 * PK and FK 
 * Relationships (one-to-many, one-to-one, many-to-many)
 
-> NOTE: Export your diagram as an image, name it `sol_exercise1.png` and place it in th `Solutions` folder, 
-> if you made any assumptions please also include them as a readme file named `sol_exercise1.md`
+> NOTE: Export your diagram as an image, name it `sol_exercise1.png` and place it in the `Exercise1/Solutions` folder, 
+> if you made any assumptions please also include them as a markdown file named `sol_exercise1.md`

@@ -309,7 +309,18 @@ as the city and state.
 
 > HINT: You have to add the default value to the `location` table in the normalized db and the `geolocation` table in the original db 
 
-3. A product may be sold by multiple sellers, but a product shouldn't be listed more than once in that sellers' catalog. If a product
+3. All products must have a `category_name` defined, if the value is missing you should update all records with:
+    * `nao_classificado` value for Portuguese   
+    * `unclassified` value for English translation
+
+4. All products must be categorized correctly, meaning that there should be an entry with the classification name in Portuguese and their
+proper translation into English in the `products_category_name_translation` table, if you find any record that is not categorized correctly, 
+you need to update records with the following values: 
+    * `classificacao_errada` value for Portuguese
+    * `wrong_classification` value for English translation
+
+
+5. A product may be sold by multiple sellers, but a product shouldn't be listed more than once in that sellers' catalog. If a product
 appears to be more than once you should consolidate such records in a single one by taking the averages of price and freight_value respectively, 
 each value should be rounded to 2 decimals.
 
@@ -319,9 +330,20 @@ Example:
 
 ![Products dedup example - result](documentation_images/products_deduplication.png)
 
+> HINT: Window functions 
+
+6. If there's any invalid dates you can update them to `1970-01-02 00:00:00`
 
 
-DO NOT: 
+7. An order can have multiple products, either the same product or different ones, for the `order_items` table 
+you have to aggregate by product_id the quantity of products on a particular order
+
+![Order items dedup example - original](documentation_images/order_items_duplicates.png)
+
+![Order items dedup example - result](documentation_images/order_items_deduplication.png)
+
+
+Do not set the following: 
 ````
 SET SQL_SAFE_UPDATES=0;
 ````

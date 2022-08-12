@@ -37,6 +37,8 @@ LIMIT 0, 1000
 ### Troubleshooting
 Here are some issues that you may encounter and how to troubleshoot them. 
 
+---
+
 #### Error Code: 1290. MySQL server is running with the --secure-file-priv option
 If you get the error when loading the data from the csv into your table, you need to mount a volume into your container 
 pointing to the directory where your files are located to the **--secure-file-prive** path (`/var/lib/mysql-files/`).
@@ -44,12 +46,16 @@ pointing to the directory where your files are located to the **--secure-file-pr
 Error Code: 1290. The MySQL server is running with the --secure-file-priv option so it cannot execute this statement
 ```
 
+---
+
 #### Error Code: 1292. Incorrect value: '' 
 We are going to ignore this kind of error, you can do so in the SQL statements whenever you are loading the data. 
 
 ```
 Error Code: 1292. Incorrect datatype value: '' for column 'column' at row 1131
 ```
+
+---
 
 #### Error Code: 1452. Cannot add or update a child row
 This error can happen because data is not consistent across files, we most likely have a value in a column on the child table

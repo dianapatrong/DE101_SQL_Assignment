@@ -254,10 +254,9 @@ that does not exist in the column of the parent table.
 Error Code: 1452. Cannot add or update a child row: a foreign key constraint fails (`database`.`table`, CONSTRAINT `constraint_ibfk_1` FOREIGN KEY (`column`) REFERENCES `table` (`column`))
 ```
 
-To solve this error you can set `FOREIGN_KEY_CHECKS=0`, but remember to set it back to 1 after your are done loading the data. 
-```shell script
-SET FOREIGN_KEY_CHECKS=0;
-```
+Since this data is not de-duplicated yet, to solve this error you can set `FOREIGN_KEY_CHECKS=0`, but make sure you set it back 
+to 1 after you are done loading the data. 
+
 
 ## ✏️ Exercise 3: Normalize the data model 
 If you take a look at the files we can see that we have scattered data across multiple files, there are repetitive 
@@ -266,17 +265,75 @@ columns that ideally should be combined.
 Let's create the normalized data model. You will do a functional dependency analysis for each of the tables and will 
 determine if such tables are in breach of the 3rd normal form (remember that the normal forms cascade), if so you will have to normalize them. 
 
-> NOTE: Export your diagram as an image, name it `sol_exercise3.png` and place it in the `Solutions` folder, additionally
-> add a sol_exercise2.md file to explain the process of normalization for each table 
+Your diagram must include: 
+* Tables, their columns and their data types
+* PK and FK 
+* Relationships (one-to-many, one-to-one, many-to-many)
 
-## ✏️ Exercise 4:  Create views and stored procedures 
+Your explanation should include: 
+* For each table the normalization process
+    * If the tables breach any normal form (1NF, 2NF, 3NF) and why 
+    * Solution proposal for that table 
+* Any assumptions that you may have made
+* Any columns that you may have dropped and the explanation of why 
+
+> NOTE: 
+> 1. Export your diagram as an image, name it `sol_exercise3.png` and place it in the `Solutions` folder
+> 2. Add a `sol_exercise3.md` file to explain the normalization process you followed  
+
+## ✏️ Exercise 4: Create the normalized data model from the existing tables
+In this exercise you are going to use the tables that you loaded in Exercise 1 to create the normalized model 
+solution given by the teacher.
+
+1. Create the DDL's for the normalized tables
+2. Create a new database called **olist_normalized** 
+3. Create the statements to load the data, follow the business logic below for de-duplication
+
+This time the constraint check is going to be performed as we are going to omit records that do not match
+from our child table to our parent table, so please make sure you have set  `SET FOREIGN_KEY_CHECKS=0;` 
+
+
+### Business rules: 
+
+1. If there is more than one record with the same `zip_code`, the process of de-duplication will be to do it by
+location city in descending order. 
+
+Example: 
+The selected record in red is the one that will have to be inserted. 
+![Geolocation de-duplication example](documentation_images/geolocation_deduplication.png)
+
+> HINT: Window functions 
+
+2. If a zip code does not exist in the `customers` or `sellers` table, you should default it to zip code 9999, with `DEFAULT`
+as the city and state. 
+
+> HINT: You have to add the default value to the `location` table in the normalized db and the `geolocation` table in the original db 
+
+3. A product may be sold by multiple sellers, but a product shouldn't be listed more than once in that sellers' catalog. If a product
+appears to be more than once you should consolidate such records in a single one by taking the averages of price and freight_value respectively, 
+each value should be rounded to 2 decimals.
+
+Example: 
+
+![Products dedup example - original](documentation_images/products_duplicates.png)
+
+![Products dedup example - result](documentation_images/products_deduplication.png)
 
 
 
-#### Create a view for orders and the total price
+DO NOT: 
+````
+SET SQL_SAFE_UPDATES=0;
+````
 
 
-> NOTE: Place all the DDL's `sol_exercise4.sql` file and place the file in the `Solutions` folder
+> NOTE: 
+> 1. Place all your DDL's in `sol_exercise4.sql` file and place the file in the `Solutions` folder
+> 
+
+⚠️ The teacher should be able to run the file and load the data into the normalized model using your script without problems, so 
+remember to include all statements. 
+
 
 ## ✏️ Exercise 5: Business questions
 Please answer the following questions regarding the Olist dataset.

@@ -1,5 +1,5 @@
 ## ✏️ Exercise 2: Create the DDL's and load the data
-Setup a docker container with a MySQL instance, create all the DDL's and load the data into the tables. 
+Setup a docker container with a MySQL instance version 8, create all the DDL's and load the data into the tables. 
 You will do this according to the **original** schema.
 
 Your file should include: 

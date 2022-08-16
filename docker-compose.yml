@@ -12,6 +12,6 @@ services:
             MYSQL_ROOT_PASSWORD: thisisasecret
             # Creates a default database called "olist"
             MYSQL_DATABASE: olist
-        # Mounted volumn of our dataset files onto --secure-file-priv location
+        # Mounted volume of our dataset files onto --secure-file-priv location
         volumes:
             - ./olist_dataset/:/var/lib/mysql-files/

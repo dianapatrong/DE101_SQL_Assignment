@@ -98,7 +98,7 @@ This dataset includes data about the items purchased within each order.
 * **seller_id**: Seller unique identifier.
 * **shipping_limit_date**: Shows the seller shipping limit date for handling the order over to the logistic partner.
 * **price**: Item price.
-* **freight_value**: Item freight value item (if an order has more than one item the freight value is split between items)
+* **freight_value**: Value to be paid for the item to be send
 
 
 **Example**

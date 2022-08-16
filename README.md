@@ -9,7 +9,7 @@ through the e-commerce site and ship their products directly to the costumers us
 * An order might have multiple items.
 * Each item might be fulfilled by a distinct seller.
 
-> Note: This dataset contains real commercial data, all text identifying stores and partners where anonymized by replacing
+> Note: This dataset contains real commercial data, all text identifying stores and partners were anonymized by replacing
 > the data with the names of Game of Thrones houses.
 
 
@@ -93,7 +93,7 @@ This dataset includes data about the items purchased within each order.
 
 **Columns**: 
 * **order_id**: Order unique identifier.
-* **order_item_id**: Sequential number identifying number of items included in the same order.
+* **order_item_id**: Sequential number identifying the items included in the same order.
 * **product_id**: Product unique identifier.
 * **seller_id**: Seller unique identifier.
 * **shipping_limit_date**: Shows the seller shipping limit date for handling the order over to the logistic partner.

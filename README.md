@@ -30,7 +30,7 @@ This is the core dataset. From each order you might find all other information.
 * **order_purchase_timestamp**: Shows the purchase timestamp.
 * **order_approved_at**: Shows the payment approval timestamp.
 * **order_delivered_carrier_date**: Shows the order posting timestamp. When it was handled to the logistic partner.
-* **order_delivered_customer_date**: Shows the actual order delivery date to the customer.
+* **order_delivered_customer_date**: Shows the actual order delivery timestamp to the customer.
 * **order_estimated_delivery_date**: Shows the estimated delivery date that was informed to customer at the purchase moment.
 
 **File**: [olist_orders_dataset.csv](olist_dataset/olist_orders_dataset.csv)
@@ -144,7 +144,7 @@ distances between sellers and customers.
 * **geolocation_city**: City name.
 * **geolocation_state**: State.
 
-**File**: [olist_geolocation_dataset](olist_dataset/olist_geolocation_dataset)
+**File**: [olist_geolocation_dataset](olist_dataset/olist_geolocation_dataset.csv)
 
 ---
 

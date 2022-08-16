@@ -5,7 +5,6 @@ or [quickdatabasediagrams](https://app.quickdatabasediagrams.com/#/) tools to do
 
 Your diagram must include: 
 * Tables, their columns and their data types
-* PK and FK 
 * Relationships (one-to-many, one-to-one, many-to-many)
 
 > NOTE: Export your diagram as an image, name it `sol_exercise1.png` and place it in the `Exercise1/Solutions` folder, 

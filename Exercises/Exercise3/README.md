@@ -1,7 +1,7 @@
 
 
 ## ✏️ Exercise 3: Normalize the data model 
-If you take a look at the files we can see that we have scattered data across multiple files, there are repetitive 
+If you take a look at the dataset files we can see that we have scattered data across multiple files, there are repetitive 
 columns that ideally should be combined. 
 
 Let's create the normalized data model. You will do a functional dependency analysis for each of the tables and will 

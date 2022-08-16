@@ -4,7 +4,7 @@ You will do this according to the **original** schema.
 
 Your file should include: 
 * All statements for table creation
-* PK and FK definitions
+* FK definitions
 * Indexes whenever they are needed
 * Statement to load data into the tables
 * **Dockerfile** or **docker-compose.yml** 

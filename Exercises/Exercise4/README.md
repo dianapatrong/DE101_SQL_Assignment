@@ -82,8 +82,8 @@ the review information for the first `order_id` displayed when ordering the `ord
 > HINT: ROW_NUMBER()
 
 
-## 8. Missing product category names
-All products must have a `category_name` defined, if the value is missing you should update all records with:
+## 8. Missing product category names in the product table
+All products must have a `category_name` defined, if the value is missing (either null or empty) you should update all records in the product with:
 * `nao_classificado` value for Portuguese   
 * `unclassified` value for English translation
 
@@ -96,6 +96,7 @@ All products must have a `category_name` defined, if the value is missing you sh
 All products must be categorized correctly, meaning that there should be an entry with the classification name in Portuguese and their
 proper translation into English in the `products_category_name_translation` table, if you find any record that is not categorized correctly, 
 you need to update records with the following values: 
+
 * `classificacao_errada` value for Portuguese
 * `wrong_classification` value for English translation
 

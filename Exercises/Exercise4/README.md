@@ -46,9 +46,9 @@ If a single customer/seller has multiple zip codes, for each customer/seller we 
 > HINT: 
 > - Use ROW_NUMBER() 
 
-## 5. An order is ship when all of it's items are ready to be send
-An order must send all of its items at the same time, if an order has different shipping dates, take the first date 
-as the truth for an order_id. 
+## 5. An order is shipped when all of its items are ready to be send
+An order must send all of its items at the same time, if an order has different shipping dates, take the **earliest** date 
+as the truth for an `order_id`. 
 
 ![Shipping date](../../documentation_images/shipping_limit_date_order.png)
 
@@ -68,14 +68,14 @@ SELECT * FROM order_items WHERE order_id = "fd4c3a2912e854eedd463b329540da4b";
 
 If this is the case we won't load those orders  into our new normalized `orders` table. 
 
-> NOTE: Consider this for all the other tables that use the `order_id` column
+> NOTE: Consider this for all the other tables that use the `order_id` column. 
 > i.e. The `review` table contains information about all orders disregarding the previous condition, to load the data into the
 > normalized review table you will have to filter out all those orders that do not comply with the previous stated rule. 
 
 
-## 7. A review can only score one order_id
-If one `review_id` has information for more than one `order_id` we are going to load only 
-the review information for the first `order_id` when ordering in ascending order.
+## 7. A single review can only score one order
+If a review has information for multiple orders we are going to load only 
+the review information for the first `order_id` displayed when ordering the `order_id` in ascending order.
 
 ![Review data](../../documentation_images/review_order_id.png)
 
@@ -87,12 +87,20 @@ All products must have a `category_name` defined, if the value is missing you sh
 * `nao_classificado` value for Portuguese   
 * `unclassified` value for English translation
 
+![not classified data](../../documentation_images/nao_classificado.png)
+
+![not classified category](../../documentation_images/nao_classificado_table.png)
+
+
 ## 9. Incorrect product categorization 
 All products must be categorized correctly, meaning that there should be an entry with the classification name in Portuguese and their
 proper translation into English in the `products_category_name_translation` table, if you find any record that is not categorized correctly, 
 you need to update records with the following values: 
 * `classificacao_errada` value for Portuguese
 * `wrong_classification` value for English translation
+
+![wrong category](../../documentation_images/classificacao_errada.png)
+
 
 ## 10. Multiple entries for same product within a seller 
 A product may be sold by multiple sellers, but a product shouldn't be listed more than once in that sellers' catalog. If a product
@@ -112,7 +120,7 @@ Result:
 > HINT: Window functions 
 
 ## 11. Invalid dates
-If there's any invalid dates you can update them to `1970-01-02 00:00:00`
+If there's any invalid dates in any of the datasets, update those dates to `1970-01-02 00:00:00`
 
 
 ## 12. Product aggregation
